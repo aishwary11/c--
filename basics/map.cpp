@@ -12,8 +12,9 @@ int main()
         cout << i.first << " " << i.second << endl;
     }
     auto it = m.find(5);
-    for (auto i = it; i != m.end(); i++)
-    {
-        cout << (*i).first << endl;
-    }
+    // for (auto i = it; i != m.end(); i++)
+    // {
+    //     cout << (*i).first << endl;
+    // }
+    return 0;
 }
