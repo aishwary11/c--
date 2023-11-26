@@ -7,15 +7,9 @@ class Node {
     Node* next;
 
    public:
-    Node(int data1, Node* next1) {
+    Node(int data1, Node* next1 = nullptr) {
         data = data1;
         next = next1;
-    }
-
-   public:
-    Node(int data1) {
-        data = data1;
-        next = nullptr;
     }
 };
 int getLength(Node* head) {
@@ -31,18 +25,18 @@ int getLength(Node* head) {
 int checkifPresent(Node* head, int val) {
     Node* temp = head;
     while (temp != nullptr) {
-        if (temp->data == val) return 1;  // Return 1 if the element is found
+        if (temp->data == val) return 1;
         temp = temp->next;
     }
-    return 0;  // Return 0 if the element is not found in the linked list
+    return 0;
 }
 Node* convertarr2LL(vector<int>& arr) {
-    Node* head = new Node(arr[0]);  // creating head
-    Node* mover = head;             // pointer pointing towards head
+    Node* head = new Node(arr[0]);
+    Node* mover = head;
     for (int i = 1; i < arr.size(); i++) {
-        Node* temp = new Node(arr[i]);  // creating new node every time
-        mover->next = temp;             // pointing mover to temp
-        mover = mover->next;            // moving mover to the next node
+        Node* temp = new Node(arr[i]);
+        mover->next = temp;
+        mover = mover->next;
     }
     return head;
 }
